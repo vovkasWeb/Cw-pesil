@@ -379,8 +379,7 @@ body {
 	.main__wrapper {
 		align-items: center;
 		flex-direction: column;
-		min-height: 95vh;
-		padding-bottom: env(safe-area-inset-bottom);
+		min-height: 90vh;
 	}
 	.main::before {
 		top: 10%;
@@ -461,7 +460,7 @@ body {
 	}
 	.ruletka {
 		/* padding: 0 0 30px 0; */
-		padding-bottom: env(safe-area-inset-bottom, 14%);
+		/* padding: 0 0 15% 0; */
 	}
 	.main__ruletka {
 		max-width: 100%;
