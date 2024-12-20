@@ -46,11 +46,11 @@
 	border-radius: 30px;
 	cursor: pointer;
 	transition: transform 0.2s ease, background-color 0.2s ease;
-	animation: pulse 2s infinite ease-in-out; 
+	animation: pulse 2s infinite ease-in-out;
 }
 .btn:hover {
 	animation: none;
-	transform: scale(0.97); 
+	transform: scale(0.97);
 }
 
 @keyframes pulse {
@@ -59,7 +59,7 @@
 		transform: scale(1);
 	}
 	50% {
-		transform: scale(1.1); 
+		transform: scale(1.1);
 	}
 }
 
@@ -97,6 +97,7 @@ body {
 }
 .container {
 	position: relative;
+	overflow: hidden;
 	max-width: 1230px;
 	padding: 0 15px;
 	margin: 0 auto;
