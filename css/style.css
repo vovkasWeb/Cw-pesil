@@ -379,7 +379,6 @@ body {
 	.main__wrapper {
 		align-items: center;
 		flex-direction: column;
-		height: 95dvh;
 	}
 	.main::before {
 		top: 10%;
@@ -408,18 +407,14 @@ body {
 		z-index: 2;
 	}
 }
-@media (max-width: 1050px) and (min-height: 700px) {
-	.popup__image {
-		top: 30%;
-		left: 65%;
-		max-width: 35%;
-		max-height: 35%;
-	}
-}
 
 @media (max-width: 850px) {
 	.main__ruletka {
 		max-width: 85%;
+		
+	}
+	.main__wrapper {
+		height: 95dvh;
 	}
 	.main__text {
 		display: flex;
