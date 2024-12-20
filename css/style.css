@@ -46,11 +46,11 @@
 	border-radius: 30px;
 	cursor: pointer;
 	transition: transform 0.2s ease, background-color 0.2s ease;
-	animation: pulse 2s infinite ease-in-out;
+	animation: pulse 2s infinite ease-in-out; 
 }
 .btn:hover {
 	animation: none;
-	transform: scale(0.97);
+	transform: scale(0.97); 
 }
 
 @keyframes pulse {
@@ -59,7 +59,7 @@
 		transform: scale(1);
 	}
 	50% {
-		transform: scale(1.1);
+		transform: scale(1.1); 
 	}
 }
 
@@ -68,7 +68,6 @@ body {
 	font-weight: 600;
 	font-size: 32px;
 	color: #ffffff;
-	color: #000;
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -98,7 +97,6 @@ body {
 }
 .container {
 	position: relative;
-	overflow: hidden;
 	max-width: 1230px;
 	padding: 0 15px;
 	margin: 0 auto;
@@ -487,11 +485,6 @@ body {
 		height: 370px;
 	}
 
-	html,
-	body {
-		overflow: hidden;
-		height: 100%;
-	}
 }
 @media (max-width: 410px) {
 	.logo img {
