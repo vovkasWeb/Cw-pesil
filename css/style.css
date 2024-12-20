@@ -45,7 +45,22 @@
 	padding: clamp(3px, 2vw, 10px) 0;
 	border-radius: 30px;
 	cursor: pointer;
-	animation: pulse 2s infinite ease-in-out;
+	transition: transform 0.2s ease, background-color 0.2s ease;
+	animation: pulse 2s infinite ease-in-out; 
+}
+.btn:hover {
+	animation: none;
+	transform: scale(0.97); 
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1); 
+	}
 }
 
 body {
@@ -70,7 +85,7 @@ body {
 	content: '';
 	position: absolute;
 	top: 20%;
-	left: 20%;
+	left: 18%;
 	width: 750px;
 	height: 632px;
 	max-width: 100%;
@@ -192,7 +207,7 @@ body {
 }
 
 .main-ruletka__arrow {
-	z-index: 1;
+	z-index: 2;
 	display: flex;
 	justify-content: center;
 	position: absolute;
@@ -215,15 +230,7 @@ body {
 	border: 3px solid #ffc700;
 	background-image: linear-gradient(to bottom, #772def, #8b4dee, #6121c9);
 }
-@keyframes pulse {
-	0%,
-	100% {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(1.1);
-	}
-}
+
 .stop-pulse {
 	animation: none;
 }
@@ -275,11 +282,12 @@ body {
 	width: 100vw;
 	height: 100vh;
 	padding: 0 15px;
-	background-color: rgba(27, 28, 45, 0.9);
+	background-color: rgba(27, 28, 45, 0.97);
 	z-index: 3;
 	top: 0;
 	left: 0;
 }
+
 .popup__content {
 	position: relative;
 	width: 442px;
@@ -375,7 +383,9 @@ body {
 	}
 	.main::before {
 		top: 10%;
-		left: 0%;
+		left: 50%; /* Центрирование по горизонтали */
+		transform: translateX(-50%);
+		right: 0%;
 	}
 	.main__prizes {
 		display: flex;
@@ -420,9 +430,9 @@ body {
 		flex: 0 1 33.333%;
 	}
 	.main::before {
-		left: 5%;
-		width: 400px;
-		height: 350px;
+		top: 5%;
+		width: 500px;
+		height: 420px;
 	}
 	.main__block-info {
 		max-width: 100%;
@@ -462,21 +472,19 @@ body {
 		min-width: 227px;
 	}
 	.popup__image {
-		transform: scaleX(-1);
+		display: none;
+		/* transform: scaleX(-1);
 		top: -10%;
 		left: -20%;
 		max-width: 130%;
 		max-height: 130%;
-		z-index: 4;
+		z-index: 4; */
 	}
 	.main::before {
-		top: 15%;
-		left: 5%;
-		width: 300px;
-		height: 250px;
-		max-width: 100%;
-		max-height: 100%;
+		top: 2%;
+		height: 370px;
 	}
+
 	html,
 	body {
 		overflow: hidden;
@@ -501,4 +509,20 @@ body {
 		font-size: clamp(30px, 3vw, 66px);
 		line-height: clamp(40px, 3vw, 82px);
 	}
+	.main::before {
+		top: 3%;
+		left: 50%;
+		height: 350px;
+	}
+}
+
+.first-on,
+.second-on,
+.first-off,
+.second-off {
+	transition: fill 0.3s ease-in-out;
+}
+.second-off,
+.second-on {
+	display: none;
 }
