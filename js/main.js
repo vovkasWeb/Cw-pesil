@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			document.body.style.overflow = 'hidden'
 			document.body.style.height = '100%'
 		}, 3000)
-		window.location.href = "https://example.com";
 
 	}
 })
