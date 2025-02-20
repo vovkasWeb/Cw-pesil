@@ -18,19 +18,13 @@ function launchConfetti() {
 	}
 }
 
-
-
-// Пример использования
-
 document.addEventListener('DOMContentLoaded', function () {
 	const ruletkaBtn = document.querySelector('.main-ruletka__btn')
 	const ruletkaBtnCenter = document.querySelector('.main-ruletka__arrow')
 
 	const ruletkaWhel = document.querySelector('.main-ruletka__wheel-img')
-	const attempts = document.querySelector('.main__attempts')
 	const prizeFirst = document.querySelector('.main__prize')
-	const prizeSecond = document.querySelector('.main__prize-two')
-	const prizeThird = document.querySelector('.main__prize-three')
+
 	const popup = document.querySelector('.popup')
 
 	const firstLampOff = document.querySelectorAll('.first-off')
@@ -39,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const secondLampOn = document.querySelectorAll('.second-on')
 
 	const attemptsText = 'You have the last attempt'
-	let countWhel = 0
 	let isButtonClicked = false
 
 	firstScroll = 2100
@@ -57,20 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
 				isButtonClicked = true
 				button.classList.add('stop-pulse') // Добавляем класс для остановки пульсации
 
-				if (countWhel === 0) {
-					prize(firstScroll, attemptsText, prizeFirst)
-				} else if (countWhel === 1) {
-					prize(secondScroll, attemptsText, prizeSecond)
-				} else if (countWhel === 2) {
-					prize(thirdScrole, '', prizeThird, prizeSecond)
-				}
+				prize(firstScroll, prizeFirst)
 			})
 		})
 	} else {
 		console.error('Одна или обе кнопки не найдены.')
 	}
 
-	const prize = (scrolling, text, prizePoint, hideBlock = '') => {
+	const prize = (scrolling, prizePoint) => {
 		ruletkaWhel.style.transform = `rotate(${Math.ceil(scrolling)}deg)`
 
 		// Модифицируем функцию lamp для обработки 0 и 1
@@ -85,23 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		// Через 5 секунд остановим цикл и выполняем дальнейшие действия
 		setTimeout(() => {
 			clearInterval(lampInterval) // Останавливаем цикл
-			if (hideBlock) {
-				hideBlock.style.display = 'none'
-			}
-
 			launchConfetti() // Запуск конфетти после загрузки скрипта
-
-			attempts.textContent = text
 			prizePoint.style.display = 'block'
 			isButtonClicked = false
 			ruletkaBtn.classList.remove('stop-pulse')
-
-			if (countWhel === 3) {
-				finish()
-			}
+			finish()
+			
 		}, 5000) // Таймаут 5 секунд
-
-		countWhel++
 	}
 
 	const finish = () => {
