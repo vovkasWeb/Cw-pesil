@@ -250,7 +250,7 @@ body {
 .main__prize,
 .prize-item {
 	display: none;
-	padding: 10px 20px;
+	padding: 10px 10px;
 	border-radius: 22px;
 	background-image: linear-gradient(to bottom, #7b3be2, #7642c9, #380a83);
 	max-width: 100%;
@@ -272,8 +272,8 @@ body {
 .prize-three__subtitle,
 .popup-prize__subtitle {
 	display: block;
-	font-size: clamp(34px, 3vw, 66px);
-	line-height: clamp(43px, 3vw, 82px);
+	font-size: clamp(34px, 3vw, 55px);
+	line-height: clamp(43px, 3vw, 70px);
 }
 
 .popup {
