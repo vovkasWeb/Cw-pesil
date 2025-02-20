@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			isButtonClicked = false
 			ruletkaBtn.classList.remove('stop-pulse')
 			finish()
-			
 		}, 5000) // Таймаут 5 секунд
 	}
 
@@ -91,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			document.body.style.overflow = 'hidden'
 			document.body.style.height = '100%'
 		}, 3000)
+		window.location.href = "https://example.com";
+
 	}
 })
 
